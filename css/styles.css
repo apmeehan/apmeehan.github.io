@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,900');
 
-
 html {
 	font-family: 'Roboto', sans-serif;
 }
@@ -45,7 +44,7 @@ main {
 }
 
 main > .intro {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'GT Walsheim Regular', 'Roboto', sans-serif;
 	font-size: 3.75rem;
 	font-weight: 900;
 }
