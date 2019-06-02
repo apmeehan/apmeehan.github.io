@@ -6,9 +6,30 @@ html {
 	background: #043557;
 }
 
+@media (min-width: 0px) {
+	html {
+		font-size: 14px;
+	}
+	.content {
+		max-width: 280px;
+	}
+}
+
+@media (min-width: 400px) {
+	html {
+		font-size: 14px;
+	}
+	.content {
+		max-width: 360px;
+	}
+}
+
 @media (min-width: 576px) {
 	html {
 		font-size: 14px;
+	}
+	.content {
+		max-width: 500px;
 	}
 }
 
@@ -16,17 +37,26 @@ html {
 	html {
 		font-size: 16px;
 	}
+	.content {
+		max-width: 600px;
+	}
 }
 
 @media (min-width: 992px) {
 	html {
 		font-size: 18px;
 	}
+	.content {
+		max-width: 700px;
+	}
 }
 
 @media (min-width: 1200px) {
 	html {
 		font-size: 20px;
+	}
+	.content {
+		max-width: 700px;
 	}
 }
 
@@ -40,7 +70,6 @@ html {
 	flex-direction: column;
 	min-height: 100vh;
 	justify-content: center;
-	padding: 0 30px;
 	text-align: center;
 	background: no-repeat url("../bg.jpg");
 	background-size: cover;
@@ -60,12 +89,15 @@ html {
 
 h1 {
 	font-weight: 900;
+	font-size: 2rem;
 	padding: 1rem 0;
 }
 
 p {
 	font-weight: 300;
-	font-size: 1rem;
+	font-size: 0.9rem;
+	padding: 0.5rem 0;
+	line-height: 1.5rem;
 }
 
 .icons-social a {
@@ -81,5 +113,6 @@ p {
 }
 
 .content {
-	max-width: 600px;
+	margin: 0 auto;
+	padding: 1rem 0;
 }
