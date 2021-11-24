@@ -60,59 +60,61 @@ html {
 	}
 }
 
-.icons-social i {
-	font-size: 3rem;
-}
-
-
-#landing-page {
+body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 	justify-content: center;
 	text-align: center;
-	background: no-repeat url("../bg.jpg");
+	background: no-repeat url('../img/lighthouse.jpg');
 	background-size: cover;
 }
 
-#landing-page .intro {
-	font-family: 'Roboto', sans-serif;
-	font-size: 3.75rem;
-	font-weight: 900;
+body * {
+	animation: 1s fadeIn 0.5s both;
 }
 
-#landing-page .tagline {
-	font-size: 1.5rem;
-	margin: 1.5rem 0;
-	font-weight: 300;
+.main-container {
+	margin-bottom: 15vh;
 }
 
-h1 {
-	font-weight: 900;
+.name {
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size: 4rem;
+	font-weight: 700;
+	letter-spacing: -0.1rem;
+}
+
+.role {
+	font-family: 'IBM Plex Mono', sans-serif;
 	font-size: 2rem;
-	padding: 1rem 0;
-}
-
-p {
+	margin: 0.5rem 0 2rem;
 	font-weight: 300;
-	font-size: 0.9rem;
-	padding: 0.5rem 0;
-	line-height: 1.5rem;
 }
 
-.icons-social a {
+.social-icons-container {
+	display: flex;
+	justify-content: center;
+}
+
+.icon {
+	padding: 0.7rem;
+	font-size: 3rem;
+	color: #FAFAFA99;
+	transition: 0.5s all;
+}
+
+.icon:hover {
 	color: #FAFAFA;
+	transform: translateY(-0.2rem);
+	transition: 0.2s
 }
 
-.icons-social i {
-	padding: 10px;
-}
-
-.icons-social a svg path{
-	fill: #FAFAFA;
-}
-
-.content {
-	margin: 0 auto;
-	padding: 1rem 0;
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
