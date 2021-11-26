@@ -29,12 +29,13 @@ body {
 	color: #FAFAFA;
 }
 
-body * {
+.main-container {
+	margin-bottom: 14vh;
 	animation: 1s fadeIn 0.5s both;
 }
 
-.main-container {
-	margin-bottom: 15vh;
+.headings {
+	margin: 1rem 0;
 }
 
 .name {
@@ -52,7 +53,7 @@ body * {
 	margin: 0 0 1.5rem;
 }
 
-.social-icons-container {
+.social-icons-grid {
 	display: flex;
 	justify-content: center;
 }
