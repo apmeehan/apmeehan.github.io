@@ -1,0 +1,72 @@
+@media (min-width: 0px) {
+	html { font-size: 14px; }
+}
+@media (min-width: 400px) {
+	html { font-size: 14px; }
+}
+@media (min-width: 576px) {
+	html { font-size: 14px; }
+}
+@media (min-width: 768px) {
+	html { font-size: 16px; }
+}
+@media (min-width: 992px) {
+	html { font-size: 18px; }
+}
+@media (min-width: 1200px) {
+	html { font-size: 20px; }
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	justify-content: center;
+	text-align: center;
+	background: #037da8;
+	color: #f9ae2b;
+}
+
+.main-container {
+	margin-bottom: 15vh;
+}
+
+.name {
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size: 4rem;
+	font-weight: 700;
+	letter-spacing: -0.1rem;
+}
+
+.role {
+	font-family: 'IBM Plex Mono', sans-serif;
+	font-size: 2rem;
+	margin: 0.5rem 0 2rem;
+	font-weight: 300;
+}
+
+.social-icons-container {
+	display: flex;
+	justify-content: center;
+}
+
+.icon {
+	padding: 0.7rem;
+	font-size: 3rem;
+	color: #f9ae2b;
+	transform: rotate(45deg);
+	transition: 0.3s transform;
+}
+
+.icon:hover {
+	transform: rotate(-45deg);
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
