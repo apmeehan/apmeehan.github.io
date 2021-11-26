@@ -1,8 +1,5 @@
 @media (min-width: 0px) {
-	html { font-size: 14px; }
-}
-@media (min-width: 400px) {
-	html { font-size: 14px; }
+	html { font-size: 12px; }
 }
 @media (min-width: 576px) {
 	html { font-size: 14px; }
@@ -41,7 +38,7 @@ body * {
 }
 
 .name {
-	font-family: 'IBM Plex Sans', sans-serif;
+	font-family: 'IBM Plex Serif', serif;
 	font-size: 4rem;
 	font-weight: 700;
 	letter-spacing: -0.1rem;
@@ -49,9 +46,10 @@ body * {
 
 .role {
 	font-family: 'IBM Plex Mono', sans-serif;
-	font-size: 2rem;
-	margin: 0.5rem 0 2rem;
+	font-size: 2.1rem;
 	font-weight: 300;
+	text-transform: lowercase;
+	margin: 0 0 1.5rem;
 }
 
 .social-icons-container {
@@ -61,7 +59,7 @@ body * {
 
 .icon {
 	padding: 0.7rem;
-	font-size: 3rem;
+	font-size: 2.8rem;
 	color: #FAFAFA99;
 	transition: 0.5s all;
 }
