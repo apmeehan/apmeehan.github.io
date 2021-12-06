@@ -26,35 +26,30 @@ body {
 	text-align: center;
 	background: no-repeat url('../img/lighthouse.jpg');
 	background-size: cover;
+	background-position: center;
 	color: #FAFAFA;
 }
 
 .main-container {
-	margin-bottom: 14vh;
-	animation: 1s fadeIn 0.5s both;
+	padding-bottom: 3rem;
 }
 
 .headings {
 	margin: 1rem 0;
 }
 
-.name {
-	font-family: 'IBM Plex Serif', serif;
+.headings__name {
 	font-size: 4rem;
-	font-weight: 700;
 	letter-spacing: -0.1rem;
 }
 
-.role {
-	font-family: 'IBM Plex Mono', sans-serif;
-	font-size: 2.1rem;
-	font-weight: 300;
-	text-transform: lowercase;
-	margin: 0 0 1.5rem;
+.headings__role {
+	font-size: 2.5rem;
 }
 
-.social-icons-grid {
+.links__inner-container {
 	display: flex;
+	flex-direction: row;
 	justify-content: center;
 }
 
@@ -62,26 +57,12 @@ body {
 	padding: 0.7rem;
 	font-size: 2.8rem;
 	color: #FAFAFA99;
-	transition: 0.5s all;
+	transition: 0.2s all;
 }
 
-.icon:hover, .icon:active {
-	color: #FAFAFA;
-	transform: translateY(-0.2rem);
-	transition: 0.2s
-}
-
+.icon:hover,
 .icon:active {
 	color: #FAFAFA;
-	transform: translateY(-0.2rem);
-	transition: 0.2s
-}
-
-@keyframes fadeIn {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+	transform: translateY(-3px);
+	filter: drop-shadow(0 0 0.6rem rgb(255, 255, 255, 0.9));
 }

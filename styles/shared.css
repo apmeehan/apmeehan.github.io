@@ -1,0 +1,65 @@
+@font-face {
+	font-family: 'Gill Sans';
+	src: url('../fonts/gill-sans-pro-bold.otf') format('opentype');
+	font-weight: bold;
+}
+@font-face {
+	font-family: 'Gill Sans';
+	src: url('../fonts/gill-sans-book-italic.otf') format('opentype');
+	font-weight: 350;
+	font-style: italic;
+}
+
+@media (min-width: 992px) {
+	html { font-size: 18px; }
+}
+
+@media (max-width: 992px) {
+	html { font-size: 15px; }
+}
+
+@media (max-width: 768px) {
+	html { font-size: 12px; }
+}
+
+@media (max-width: 576px) {
+	html { font-size: 3.5vw; }
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	display: flex;
+	background: #037da8;
+	color: #f9ae2b;
+}
+
+.main-container {
+	margin: auto;
+	width: fit-content;
+	text-align: center;
+	animation: 0.5s fade-in;
+}
+
+.headings__name {
+	font-family: 'Gill Sans', sans-serif;
+	font-weight: bold;
+}
+
+.headings__role {
+	font-family: 'Gill Sans', sans-serif;
+	font-weight: 350;
+	font-style: italic;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
