@@ -1,67 +1,48 @@
-@media (min-width: 0px) {
-	html { font-size: 12px; }
-}
-@media (min-width: 576px) {
-	html { font-size: 14px; }
-}
-@media (min-width: 768px) {
-	html { font-size: 16px; }
-}
-@media (min-width: 992px) {
-	html { font-size: 18px; }
-}
-@media (min-width: 1200px) {
-	html { font-size: 20px; }
-}
-
-html {
-	background: #043557;
-}
-
-body {
+body.lighthouse {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 	justify-content: center;
 	text-align: center;
-	background: no-repeat url('../img/lighthouse.jpg');
+	background: no-repeat url('../../img/lighthouse.jpg');
 	background-size: cover;
 	background-position: center;
+	background-color: #025998;
 	color: #FAFAFA;
 }
 
-.main-container {
+.lighthouse .main-container {
 	padding-bottom: 3rem;
 }
 
-.headings {
+.lighthouse .headings {
 	margin: 1rem 0;
 }
 
-.headings__name {
+.lighthouse .headings__name {
 	font-size: 4rem;
 	letter-spacing: -0.1rem;
 }
 
-.headings__role {
+.lighthouse .headings__role {
 	font-size: 2.5rem;
 }
 
-.links__inner-container {
+.lighthouse .links__inner-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 }
 
-.icon {
+.lighthouse .icon {
 	padding: 0.7rem;
 	font-size: 2.8rem;
 	color: #FAFAFA99;
-	transition: 0.2s all;
+	transition: transform 0.2s, filter 0.2s;
 }
 
-.icon:hover,
-.icon:active {
+.lighthouse .icon:hover,
+.lighthouse .icon:active {
 	color: #FAFAFA;
 	transform: translateY(-3px);
 	filter: drop-shadow(0 0 0.6rem rgb(255, 255, 255, 0.9));

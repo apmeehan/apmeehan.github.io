@@ -9,13 +9,27 @@
 		<link rel="icon" href="favicon.ico" type="image/png" />
 		<link href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" rel="stylesheet">
 
-		<link rel="stylesheet" href="styles/reset.css">
-		<link rel="stylesheet" href="styles/shared.css">
-		<!-- <link rel="stylesheet" href="styles/lighthouse.css"> -->
-		<link rel="stylesheet" href="styles/omd.css">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/common.css">
+		<link rel="stylesheet" href="css/themes/lighthouse.css">
+		<link rel="stylesheet" href="css/themes/omd.css">
 	</head>
 
-	<body>
+	<body class="omd">
+		<script>
+			const THEMES = ['omd', 'lighthouse'];
+      let currentThemeIndex;
+
+      const storedThemeIndex = localStorage.getItem('currentThemeIndex');
+      if (storedThemeIndex != null) {
+        currentThemeIndex = storedThemeIndex;
+				document.body.classList.remove(...document.body.classList);
+				document.body.classList.add(THEMES[currentThemeIndex]);
+      } else {
+				currentThemeIndex = 0;
+			}
+    </script>
+
 		<div class="main-container">
 			<div class="headings">
 				<h1 class="headings__name">Pete Meehan</h1>
@@ -69,10 +83,10 @@
 						<div class="links__cell"></div>
 						<div class="links__cell"></div>
 						<div class="links__cell"></div>
-						<div class="links__cell"></div>
 						<div class="links__cell links__cell--has-link">
 							<a href="https://www.linkedin.com/in/apetermeehan/" class="icon fab fa-linkedin" title="LinkedIn" aria-label="Open my LinkedIn"></a>
 						</div>
+						<div class="links__cell"></div>
 						<div class="links__cell"></div>
 					</div>
 
@@ -135,10 +149,23 @@
 						<div class="links__cell"></div>
 						<div class="links__cell"></div>
 						<div class="links__cell"></div>
-						<div class="links__cell"></div>
+						<div class="links__cell links__cell--has-link">
+							<button class="change-theme icon fas fa-forward" title="Change theme" aria-label="Change site theme"></button>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<script>
+      document.querySelector('button.change-theme').addEventListener('click', () => {
+				currentThemeIndex = (currentThemeIndex + 1) % THEMES.length;
+				
+        document.body.classList.remove(...document.body.classList);
+				document.body.classList.add(THEMES[currentThemeIndex]);
+
+        localStorage.setItem('currentThemeIndex', currentThemeIndex);
+      });
+    </script>
 	</body>
 </html>

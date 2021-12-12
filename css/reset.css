@@ -13,6 +13,11 @@ img {
   height: auto;
 }
 
+button {
+  background: none;
+  border: none;
+}
+
 a:link,
 a:visited,
 a:hover,
