@@ -19,12 +19,17 @@ body {
 	display: flex;
 }
 
-button {
-	cursor: pointer;
+body .headings * {
+	transition: font-size 0.7s;
 }
 
-* {
-	transition: all 1s;
+body .links,
+body .links * {
+	transition: all 0.7s;
+}
+
+button {
+	cursor: pointer;
 }
 
 .main-container {

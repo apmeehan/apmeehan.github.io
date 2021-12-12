@@ -51,21 +51,27 @@ body.omd {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transform: rotate(-45deg);
-	transition: transform 0.5s 0.1s ease-in;
+	transform: rotate(45deg);
+	transition: transform 0.5s 0.2s ease-in;
 }
-
 .omd .links__cell:hover {
 	transition: transform 0.2s 0s ease;
+	transform: rotate(-45deg);
+}
+
+.omd .links__cell--has-link {
+	transform: rotate(-45deg);
+}
+.omd .links__cell--has-link:hover {
 	transform: rotate(45deg);
 }
 
 .omd .links__cell:not(.links__cell--has-link)::before {
 	content: '';
 	position: absolute;
-  left: -5%;
-  right: -5%;
-	height: 30%;
+  top: -5%;
+  bottom: -5%;
+	width: 30%;
 	border-radius: 9999px;
 	background: #f9ae2b;
 }
