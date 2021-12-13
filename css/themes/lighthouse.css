@@ -1,7 +1,6 @@
 body.lighthouse {
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
 	justify-content: center;
 	text-align: center;
 	background: no-repeat url('../../img/lighthouse.jpg');
@@ -12,7 +11,7 @@ body.lighthouse {
 }
 
 .lighthouse .main-container {
-	padding-bottom: 3rem;
+	padding-bottom: 2rem;
 }
 
 .lighthouse .headings {
@@ -26,6 +25,7 @@ body.lighthouse {
 
 .lighthouse .headings__role {
 	font-size: 2.5rem;
+	letter-spacing: 0.2rem;
 }
 
 .lighthouse .links__inner-container {
@@ -34,16 +34,60 @@ body.lighthouse {
 	justify-content: center;
 }
 
+.lighthouse .links__cell--has-link {
+	color: #FAFAFA99;
+	/* animation: lighthouse-shine 8s infinite; */
+}
+
 .lighthouse .icon {
 	padding: 0.7rem;
 	font-size: 2.8rem;
-	color: #FAFAFA99;
-	transition: transform 0.2s, filter 0.2s;
+	color: inherit;
+	transition: color 0.2s, transform 0.2s, filter 0.2s;
+	animation: lighthouse-shine 8s infinite;
 }
 
 .lighthouse .icon:hover,
 .lighthouse .icon:active {
-	color: #FAFAFA;
 	transform: translateY(-3px);
-	filter: drop-shadow(0 0 0.6rem rgb(255, 255, 255, 0.9));
+}
+
+.lighthouse .icon:hover::before,
+.lighthouse .icon:active::before {
+	color: #FFF;
+	transition: color 0.2s;
+}
+
+.lighthouse .fa-github {
+	animation-delay: 0.2s;
+}
+.lighthouse .fa-linkedin {
+	animation-delay: 0.4s;
+}
+.lighthouse .fa-instagram {
+	animation-delay: 0.6s;
+}
+.lighthouse .fa-forward {
+	animation-delay: 0.8s;
+}
+
+@keyframes lighthouse-shine {
+	80% {
+		color: inherit;
+		filter: none;
+	}
+	90% {
+		color: #FFF;
+		filter: drop-shadow(0 0 1rem rgb(255, 255, 255, 0.9))
+	}
+	100% {
+		color: inherit;
+		filter: none;
+	}
+}
+
+@media (max-width: 480px) {
+	.lighthouse .main-container {
+		padding-bottom: 6rem;
+	}
 }
