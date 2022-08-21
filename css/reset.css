@@ -1,10 +1,17 @@
-*, *:before, *:after {
-  margin: 0;
-  padding: 0;
+html {
   box-sizing: border-box;
 }
 
-ol, ul {
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
   list-style: none;
 }
 
@@ -18,9 +25,6 @@ button {
   border: none;
 }
 
-a:link,
-a:visited,
-a:hover,
-a:active {
+a:not(:hover):not(:active) {
   text-decoration: none;
 }

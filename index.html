@@ -1,171 +1,160 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<title>Pete Meehan</title>
-		<link rel="icon" href="favicon.ico" type="image/png" />
-		<link href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" rel="stylesheet">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/common.css">
-		<link rel="stylesheet" href="css/themes/omd.css">
-		<link rel="stylesheet" href="css/themes/lighthouse.css">
-	</head>
+    <title>Peter Meehan</title>
 
-	<body class="omd">
-		<script>
-			const THEMES = ['omd', 'lighthouse'];
-      let currentThemeIndex;
+    <link rel="icon" href="favicon.ico" type="image/png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/themes/omd.css">
+  </head>
 
-      const storedThemeIndex = localStorage.getItem('currentThemeIndex');
-      if (storedThemeIndex != null) {
-        currentThemeIndex = storedThemeIndex;
-				document.body.classList.remove(...document.body.classList);
-				document.body.classList.add(THEMES[currentThemeIndex]);
-      } else {
-				currentThemeIndex = 0;
-			}
-    </script>
+  <body>
+    <div class="main">
+      <div class="headings">
+        <h1 class="headings__name">Peter Meehan</h1>
+        <h2 class="headings__role">Front End Dev</h2>
+      </div>
 
-		<div class="main-container">
-			<div class="headings">
-				<h1 class="headings__name">Pete Meehan</h1>
-				<h2 class="headings__role">Front End Developer</h2>
-			</div>
+      <div class="links">
+        <div class="links__inner-container">
+          <div class="links__row">
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+          </div>
 
-			<div class="links">
-				<div class="links__inner-container">
-					<div class="links__row">
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-					</div>
+          <div class="links__row">
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell links__cell--hasLink">
+              <a
+                href="https://github.com/apmeehan"
+                class="icon fab fa-github"
+                title="My GitHub"
+              ></a>
+            </div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+          </div>
 
-					<div class="links__row">
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell links__cell--has-link">
-							<a href="https://github.com/apmeehan" class="icon fab fa-github" title="GitHub" aria-label="Open my GitHub"></a>
-						</div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-					</div>
+          <div class="links__row">
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+          </div>
 
-					<div class="links__row">
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-					</div>
+          <div class="links__row">
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell links__cell--hasLink">
+              <a
+                href="https://www.linkedin.com/in/apetermeehan/"
+                class="icon fab fa-linkedin"
+                title="My LinkedIn"
+              ></a>
+            </div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+          </div>
 
-					<div class="links__row">
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell links__cell--has-link">
-							<a href="https://www.linkedin.com/in/apetermeehan/" class="icon fab fa-linkedin" title="LinkedIn" aria-label="Open my LinkedIn"></a>
-						</div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-					</div>
+          <div class="links__row">
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+          </div>
 
-					<div class="links__row">
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-					</div>
+          <div class="links__row">
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+          </div>
 
-					<div class="links__row">
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-					</div>
+          <div class="links__row">
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+          </div>
 
-					<div class="links__row">
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-					</div>
+          <div class="links__row">
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell links__cell--hasLink">
+              <a
+                href="https://www.instagram.com/apmeehan/"
+                class="icon fab fa-instagram"
+                title="My Instagram"
+              ></a>
+            </div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+          </div>
 
-					<div class="links__row">
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell links__cell--has-link">
-							<a href="https://www.instagram.com/apmeehan/" class="icon fab fa-instagram" title="Instagram" aria-label="Open my Instagram"></a>
-						</div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-					</div>
+          <div class="links__row">
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+            <div class="links__cell"></div>
+          </div>
+        </div>
+      </div>
 
-					<div class="links__row">
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell"></div>
-						<div class="links__cell links__cell--has-link">
-							<button class="change-theme icon fas fa-forward" title="Change theme" aria-label="Change site theme"></button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<script>
-      document.querySelector('button.change-theme').addEventListener('click', () => {
-				currentThemeIndex = (currentThemeIndex + 1) % THEMES.length;
-				
-        document.body.classList.remove(...document.body.classList);
-				document.body.classList.add(THEMES[currentThemeIndex]);
-
-        localStorage.setItem('currentThemeIndex', currentThemeIndex);
-      });
-    </script>
-	</body>
+      <div class="credit">
+        <a href="https://www.udiscovermusic.com/stories/omd-orchestral-manoeuvres-in-the-dark-debut-album/">
+          Design source
+        </a>
+      </div>
+    </div>
+  </body>
 </html>

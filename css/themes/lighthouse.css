@@ -1,93 +1,110 @@
-body.lighthouse {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
-	background: no-repeat url('../../img/lighthouse.jpg');
-	background-size: cover;
-	background-position: center;
-	background-color: #025998;
-	color: #FAFAFA;
+html {
+  background: #025998;
 }
 
-.lighthouse .main-container {
-	padding-bottom: 2rem;
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: no-repeat url('../../img/lighthouse.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fafafa;
 }
 
-.lighthouse .headings {
-	margin: 1rem 0;
+.main-container {
+  padding-bottom: 2rem;
 }
 
-.lighthouse .headings__name {
-	font-size: 4rem;
-	letter-spacing: -0.1rem;
+.headings {
+  margin: 1rem 0;
 }
 
-.lighthouse .headings__role {
-	font-size: 2.5rem;
-	letter-spacing: 0.2rem;
+.headings__name {
+  font-size: 4rem;
+  letter-spacing: -0.1rem;
+  line-height: 1;
 }
 
-.lighthouse .links__inner-container {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
+.headings__role {
+  font-size: 2.5rem;
+  letter-spacing: 0.2rem;
 }
 
-.lighthouse .links__cell--has-link {
-	color: #FAFAFA99;
-	/* animation: lighthouse-shine 8s infinite; */
+.links__inner-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.lighthouse .icon {
-	padding: 0.7rem;
-	font-size: 2.8rem;
-	color: inherit;
-	transition: color 0.2s, transform 0.2s, filter 0.2s;
-	animation: lighthouse-shine 8s infinite;
+.links__cell--has-link {
+  color: #fafafa99;
+  /* animation: lighthouse-shine 8s infinite; */
 }
 
-.lighthouse .icon:hover,
-.lighthouse .icon:active {
-	transform: translateY(-3px);
+.icon {
+  padding: 0.7rem;
+  font-size: 2.8rem;
+  color: #fafafa99;
+  transition: color 0.2s, transform 0.2s, filter 0.2s;
+  animation: lighthouse-shine 8s infinite;
 }
 
-.lighthouse .icon:hover::before,
-.lighthouse .icon:active::before {
-	color: #FFF;
-	transition: color 0.2s;
+.icon:hover,
+.icon:active {
+  transform: translateY(-3px);
 }
 
-.lighthouse .fa-github {
-	animation-delay: 0.2s;
+.icon::before {
+  transition: color 0.2s;
 }
-.lighthouse .fa-linkedin {
-	animation-delay: 0.4s;
+
+.icon:hover::before,
+.icon:active::before {
+  color: #fff;
 }
-.lighthouse .fa-instagram {
-	animation-delay: 0.6s;
+
+.fa-github {
+  animation-delay: 0.2s;
 }
-.lighthouse .fa-forward {
-	animation-delay: 0.8s;
+.fa-linkedin {
+  animation-delay: 0.4s;
+}
+.fa-instagram {
+  animation-delay: 0.6s;
+}
+.fa-forward {
+  animation-delay: 0.8s;
 }
 
 @keyframes lighthouse-shine {
-	80% {
-		color: inherit;
-		filter: none;
-	}
-	90% {
-		color: #FFF;
-		filter: drop-shadow(0 0 1rem rgb(255, 255, 255, 0.9))
-	}
-	100% {
-		color: inherit;
-		filter: none;
-	}
+  30% {
+    color: #fafafa99;
+    filter: none;
+  }
+  40% {
+    color: #fff;
+    filter: drop-shadow(0 0 1rem rgb(255, 255, 255, 0.9));
+  }
+  50% {
+    color: #fafafa99;
+    filter: none;
+  }
+}
+
+@media (min-width: 480px) {
+  html {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 480px) {
-	.lighthouse .main-container {
-		padding-bottom: 6rem;
-	}
+  html {
+    font-size: 3.5vw;
+  }
+
+  .main-container {
+    padding-bottom: 6rem;
+  }
 }

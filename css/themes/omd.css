@@ -1,119 +1,245 @@
-body.omd {
-	display: flex;
-	background-color: #037da8;
-	color: #f9ae2b;
+@font-face {
+  font-family: 'Gill Sans';
+  /* src: url('../../fonts/gill-sans-bold.otf') format('opentype'); */
+  src: url('../../fonts/gill-sans-bold.otf') format('opentype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('../../fonts/gill-sans-book.otf') format('opentype');
+  font-weight: 350;
+}
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('../../fonts/gill-sans-book-italic.otf') format('opentype');
+  font-weight: 350;
+  font-style: italic;
 }
 
-.omd .headings {
-	margin: 1rem 0;
-	padding: 0 0.25rem;
-	display: flex;
-	align-items: flex-start;
-	gap: 1em;
+:root {
+  --colors__white: #eee;
+  --colors__black: #111;
+  --colors__pink: hsl(328, 90%, 60%);
+  --colors__omd-orange: #f9ae2b;
+  --colors__omd-blue: #037da8;
+
+  --fg-color: var(--colors__omd-orange);
+  --bg-color: var(--colors__omd-blue);
+  --link-color: var(--colors__omd-orange);
+
+  --start-angle: 45deg;
+  --hover-angle: -45deg;
 }
 
-.omd .headings__name {
-	text-transform: uppercase;
-	font-size: 2.5rem;
+html {
+  height: 100%;
 }
 
-.omd .headings__role {
-	text-transform: lowercase;
-	font-size: 2.5rem;
-	letter-spacing: 0.025rem;
+body {
+  min-height: 100%;
+  display: flex;
+  color: var(--fg-color);
+  background: var(--bg-color);
+  overflow: hidden;
+  animation: fade-in 0.7s;
+  font-family: 'Gill Sans', sans-serif;
 }
 
-.omd .links {
-	display: flex;
-	flex-direction: column;
-	padding-bottom: 100%;
-	position: relative;
+button {
+  cursor: pointer;
 }
 
-.omd .links__inner-container {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	display: flex;
+a {
+  color: var(--link-color);
+}
+
+.main {
+  margin: auto;
+  width: fit-content;
+}
+
+.headings {
+  padding: 0 0.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.headings__name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.headings__role {
+  font-size: 2.5rem;
+  font-style: italic;
+  font-weight: 350;
+  text-transform: lowercase;
+  letter-spacing: 0.01em;
+}
+
+.credit {
+  position: fixed;
+  bottom: 1rem;
+  font-style: italic;
+  font-weight: 350;
+  text-transform: lowercase;
+  opacity: 0.8;
+  letter-spacing: 0.1em;
+}
+.credit:hover {
+  opacity: 1;
+}
+
+.links {
+  margin: 0.5rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100%;
+  position: relative;
+}
+
+.links__inner-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
   flex-direction: column;
 }
 
-.omd .links__row {
-	display: flex;
-	height: 100%;
+.links__row {
+  display: flex;
+  height: 100%;
 }
 
-.omd .links__cell {
-	height: 100%;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	transform: rotate(45deg);
-	transition: transform 0.5s 0.2s ease-in;
+.links__cell {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
-.omd .links__cell:hover {
-	transition: transform 0.2s 0s ease;
-	transform: rotate(-45deg);
+.links__cell::before,
+.links__cell--hasLink > * {
+  transform: rotate(var(--start-angle));
+  transition: transform 1s, filter 1s;
 }
-
-.omd .links__cell--has-link {
-	transform: rotate(-45deg);
-}
-.omd .links__cell--has-link:hover {
-	transform: rotate(45deg);
+.links__cell--hasLink:hover > * {
+  filter: brightness(1.2) drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
 }
 
-.omd .links__cell:not(.links__cell--has-link)::before {
-	content: '';
-	position: absolute;
+.links__cell a {
+  text-decoration: none;
+}
+
+.links__cell:hover::before,
+.links__cell--hasLink:hover > * {
+  transform: rotate(var(--hover-angle));
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.links__cell:not(.links__cell--hasLink)::before {
+  content: '';
+  position: absolute;
   top: -5%;
   bottom: -5%;
-	width: 30%;
-	border-radius: 9999px;
-	background: #f9ae2b;
+  width: 32%;
+  border-radius: 9999px;
+  background: var(--fg-color);
 }
 
-.omd .icon {
-	display: flex;
-	font-size: 3.5rem;
-	color: #f9ae2b;
+.fab {
+  display: flex;
+  color: var(--link-color);
+}
+.fab::before {
+  margin: auto;
 }
 
-.omd .icon::before {
-	margin: auto;
+.fab.fa-github {
+  font-size: 3.4rem;
+}
+.fab.fa-linkedin {
+  font-size: 2.9rem;
+}
+.fab.fa-instagram {
+  font-size: 3.2rem;
 }
 
+@media (min-width: 992px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media (max-width: 992px), (max-height: 992px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media (max-width: 768px), (max-height: 768px) {
+  html {
+    font-size: 12px;
+  }
 
-@media (max-width: 768px) {
-	.omd .links__row:nth-of-type(3),
-	.omd .links__row:nth-of-type(7) {
-		display: none
-	}
-	.omd .links__cell:nth-of-type(2),
-	.omd .links__cell:nth-of-type(8) {
-		display: none
-	}
-	.omd .icon {
-		font-size: 4rem;
-	}
+  .links__row:nth-of-type(3),
+  .links__row:nth-of-type(7) {
+    display: none;
+  }
+  .links__cell:nth-of-type(2),
+  .links__cell:nth-of-type(8) {
+    display: none;
+  }
+
+  .fab.fa-github {
+    font-size: 4.1rem;
+  }
+  .fab.fa-linkedin {
+    font-size: 3.5rem;
+  }
+  .fab.fa-instagram {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 576px), (max-height: 576px) {
+  html {
+    font-size: min(3.5vw, 3vh);
+  }
+
+  .headings {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .headings__role {
+    letter-spacing: 0.66rem;
+  }
+
+  .links__row:nth-of-type(5),
+  .links__row:nth-of-type(6) {
+    display: none;
+  }
+  .links__cell:nth-of-type(5),
+  .links__cell:nth-of-type(6) {
+    display: none;
+  }
+
+  .fab.fa-github {
+    font-size: 3.7rem;
+  }
+  .fab.fa-linkedin {
+    font-size: 3.1rem;
+  }
+  .fab.fa-instagram {
+    font-size: 3.6rem;
+  }
 }
 
-@media (max-width: 576px) {
-	.omd .headings {
-		flex-direction: column;	gap: 0;
-	}
-	.omd .links__row:nth-of-type(5),
-	.omd .links__row:nth-of-type(6) {
-		display: none
-	}
-	.omd .links__cell:nth-of-type(5),
-	.omd .links__cell:nth-of-type(6) {
-		display: none
-	}
-	.omd .icon {
-		font-size: 3rem;
-	}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
