@@ -25,6 +25,6 @@ button {
   border: none;
 }
 
-a:not(:hover):not(:active) {
+a:not(:hover) {
   text-decoration: none;
 }
