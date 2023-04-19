@@ -1,110 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy:ital@0;1&display=swap');
+
+:root {
+  --colors__ocean-blue: #025998;
+  --colors__white: #fafafa;
+
+  --bg-color: var(--colors__ocean-blue);
+  --fg-color: var(--colors__white);
+}
+
 html {
-  background: #025998;
+  color: var(--fg-color);
+  font-family: 'Sorts Mill Goudy', serif;
+  background-color: var(--bg-color);
+  background-image: url('./lighthouse-desktop.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 60%;
 }
 
 body {
+  min-height: 100vh;
+  padding-top: 20vh;
+  padding-bottom: 9rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background: no-repeat url('../../img/lighthouse.jpg');
-  background-size: cover;
-  background-position: center;
-  color: #fafafa;
+  animation: fade-in 1s both 0.2s;
 }
 
 .main-container {
   padding-bottom: 2rem;
 }
 
-.headings {
-  margin: 1rem 0;
+#headings {
+  margin: 0 1rem;
 }
 
-.headings__name {
-  font-size: 4rem;
-  letter-spacing: -0.1rem;
+#my-name {
   line-height: 1;
+  margin-bottom: 0.25rem;
+  font-size: 2.8rem;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+  opacity: 0.9;
 }
 
-.headings__role {
+#my-title {
   font-size: 2.5rem;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.025em;
+  font-style: italic;
+  opacity: 0.7;
 }
 
-.links__inner-container {
+#links {
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  animation: fade-in 1s both 0.5s;
 }
 
-.links__cell--has-link {
-  color: #fafafa99;
-  /* animation: lighthouse-shine 8s infinite; */
+#links a {
+  text-decoration: none;
 }
 
-.icon {
+.fab {
   padding: 0.7rem;
   font-size: 2.8rem;
-  color: #fafafa99;
+  color: #ffffff70;
   transition: color 0.2s, transform 0.2s, filter 0.2s;
-  animation: lighthouse-shine 8s infinite;
+  animation: lighthouse-shine 8s both infinite;
 }
 
-.icon:hover,
-.icon:active {
-  transform: translateY(-3px);
+.fab:hover,
+.fab:active {
+  transform: translateY(-2px);
 }
 
-.icon::before {
+.fab::before {
   transition: color 0.2s;
 }
 
-.icon:hover::before,
-.icon:active::before {
+.fab:hover::before,
+.fab:active::before {
   color: #fff;
 }
 
 .fa-github {
-  animation-delay: 0.2s;
+  animation-delay: 0.3s;
 }
 .fa-linkedin {
-  animation-delay: 0.4s;
-}
-.fa-instagram {
   animation-delay: 0.6s;
 }
-.fa-forward {
-  animation-delay: 0.8s;
+.fa-instagram {
+  animation-delay: 0.9s;
 }
 
-@keyframes lighthouse-shine {
-  30% {
-    color: #fafafa99;
-    filter: none;
-  }
-  40% {
-    color: #fff;
-    filter: drop-shadow(0 0 1rem rgb(255, 255, 255, 0.9));
-  }
-  50% {
-    color: #fafafa99;
-    filter: none;
-  }
-}
-
-@media (min-width: 480px) {
-  html {
-    font-size: 16px;
-  }
-}
 
 @media (max-width: 480px) {
   html {
-    font-size: 3.5vw;
+    font-size: min(16px, 3vw);
+    background-image: url('./lighthouse-mobile.jpg');
   }
 
-  .main-container {
-    padding-bottom: 6rem;
+  body {
+    padding-top: 10vh;
+  }
+}
+
+
+@keyframes lighthouse-shine {
+  30% {
+    color: #ffffff70;
+    filter: none;
+    animation-timing-function: ease-in;
+  }
+  40% {
+    color: #fff;
+    filter:
+      drop-shadow(0 0 1rem #fff)
+      drop-shadow(0 0 3rem #fff)
+      drop-shadow(0 0 5rem #fff);
+    animation-timing-function: ease-out;
+  }
+  50% {
+    color: #ffffff70;
+    filter: none;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

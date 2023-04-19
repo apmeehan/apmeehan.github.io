@@ -1,7 +1,9 @@
+// @ts-nocheck
+
+/** Generate responsive 9x9 links grid */
+
 const GRID_ROW_COUNT = 9;
 const GRID_COLUMN_COUNT = 9;
-
-/*~~~~~ Generate responsive 9x9 links grid ~~~~~*/
 
 const linksList = document.querySelector("#links");
 
@@ -32,8 +34,6 @@ for (let row = 0; row < GRID_ROW_COUNT; row += 1) {
     const linkIndex = linkPositions.findIndex((p) => p.row === row && p.col === col);
 
     if (linkIndex > -1) {
-      divCell.classList.add("grid-cell--hasLink");
-
       const link = linksList.children[linkIndex].querySelector("a");
       link.textContent = '';
 
@@ -44,13 +44,5 @@ for (let row = 0; row < GRID_ROW_COUNT; row += 1) {
 
 linksList.replaceWith(newLinksContainer);
 
-/*~~~~~ Wrap my name and title in a container element, for styled layout ~~~~~*/
-
-const myName = document.querySelector("#my-name");
-const myTitle = document.querySelector("#my-title");
-
-const headings = document.createElement("div");
-headings.id = "headings";
-
-myName.parentNode.insertBefore(headings, myName);
-headings.append(myName, myTitle);
+// Add link to design source
+document.querySelector("footer").appendChild(Object.assign(document.createElement("a"), { textContent: "Design source", href: "https://www.udiscovermusic.com/stories/omd-orchestral-manoeuvres-in-the-dark-debut-album" }))
