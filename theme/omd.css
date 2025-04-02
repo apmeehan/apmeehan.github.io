@@ -29,13 +29,15 @@
   --start-angle: 45deg;
   --end-angle: -45deg;
 
-  --hover-on-duration: 0.2s;
-  --hover-off-duration: 1s;
+  --hover-on-duration: 0.15s;
+  --hover-off-duration: 0.7s;
 
   --link-hover-filter:
-    brightness(1.2)
-    saturate(0.8)
-    drop-shadow(0 0 0.33em rgba(255, 255, 255, 0.8));
+    brightness(1.5)
+    saturate(0.5)
+    drop-shadow(0 0 0.3em rgba(255, 255, 255, 0.5));
+
+  --gravity-bezier: cubic-bezier(0.33, 0, 0.67, 0.33);
 }
 
 html {
@@ -49,7 +51,11 @@ html {
 body {
   margin: auto;
   width: fit-content;
-  animation: fade-in 1s both 0.2s;
+  animation: fade-in 0.5s both;
+}
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 button {
@@ -89,15 +95,13 @@ footer {
 
 footer a {
   color: var(--link-color);
-  opacity: 0.8;
 }
-
 footer a:hover {
-  opacity: 1;
+  filter: var(--link-hover-filter)
 }
 
 
-/* Use padding trick to maintain square aspect ratio */
+/* Padding trick that maintains square aspect ratio */
 #links-grid-container {
   margin: 0.5rem 0 2rem;
   display: flex;
@@ -135,8 +139,8 @@ footer a:hover {
 .grid-cell::before {
   transform: rotate(var(--start-angle));
   transition:
-    transform var(--hover-off-duration),
-    filter var(--hover-off-duration);
+    transform var(--hover-off-duration) var(--gravity-bezier),
+    filter var(--hover-off-duration) var(--gravity-bezier);
 }
 
 .grid-cell:hover a,
@@ -169,55 +173,40 @@ footer a:hover {
   margin: auto;
 }
 
-.fab.fa-github {
-  font-size: 3.2rem;
-}
-.fab.fa-linkedin {
-  font-size: 2.9rem;
-}
-.fab.fa-instagram {
-  font-size: 3.2rem;
-}
+.fab.fa-github { font-size: 3.2rem; }
+.fab.fa-linkedin { font-size: 2.9rem; }
+.fab.fa-instagram { font-size: 3.2rem; }
 
 @media (min-width: 992px) {
   html {
     font-size: 18px;
   }
 }
+
 @media (max-width: 992px), (max-height: 992px) {
   html {
     font-size: 15px;
   }
 }
+
 @media (max-width: 768px), (max-height: 768px) {
   html {
     font-size: 12px;
   }
 
   .grid-row:nth-of-type(3),
-  .grid-row:nth-of-type(7) {
-    display: none;
-  }
+  .grid-row:nth-of-type(7),
   .grid-cell:nth-of-type(2),
   .grid-cell:nth-of-type(8) {
     display: none;
   }
 
-  .fab.fa-github {
-    font-size: 4rem;
-  }
-  .fab.fa-linkedin {
-    font-size: 3.5rem;
-  }
-  .fab.fa-instagram {
-    font-size: 4rem;
-  }
+  .fab.fa-github { font-size: 4rem; }
+  .fab.fa-linkedin { font-size: 3.5rem; }
+  .fab.fa-instagram { font-size: 4rem; }
 }
-@media (max-width: 576px), (max-height: 576px) {
-  html {
-    font-size: min(3.5vw, 3vh);
-  }
 
+@media (max-width: 576px), (max-height: 576px) {
   #headings {
     flex-direction: column;
     gap: 0;
@@ -227,31 +216,18 @@ footer a:hover {
     letter-spacing: 0.66rem;
   }
 
-  .grid-row:nth-of-type(5),
-  .grid-row:nth-of-type(6) {
-    display: none;
+  html {
+    font-size: min(3.5vw, 3vh);
   }
+
+  .grid-row:nth-of-type(5),
+  .grid-row:nth-of-type(6),
   .grid-cell:nth-of-type(5),
   .grid-cell:nth-of-type(6) {
     display: none;
   }
 
-  .fab.fa-github {
-    font-size: 3.5rem;
-  }
-  .fab.fa-linkedin {
-    font-size: 3.1rem;
-  }
-  .fab.fa-instagram {
-    font-size: 3.6rem;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  .fab.fa-github { font-size: 3.5rem; }
+  .fab.fa-linkedin { font-size: 3.1rem; }
+  .fab.fa-instagram { font-size: 3.6rem; }
 }
