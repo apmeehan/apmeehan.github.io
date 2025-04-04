@@ -1,18 +1,18 @@
 @font-face {
-  font-family: 'Gill Sans';
-  src: url('../fonts/gill-sans-bold.otf') format('opentype');
+  font-family: "Gill Sans OMD";
+  src: url("../fonts/gill-sans-bold.otf") format("opentype");
   font-weight: 700;
 }
 @font-face {
-  font-family: 'Gill Sans';
-  src: url('../fonts/gill-sans-book.otf') format('opentype');
-  font-weight: 350;
+  font-family: "Gill Sans OMD";
+  src: url("../fonts/gill-sans-book-italic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
 }
 @font-face {
-  font-family: 'Gill Sans';
-  src: url('../fonts/gill-sans-book-italic.otf') format('opentype');
-  font-weight: 350;
-  font-style: italic;
+  font-family: "Gill Sans OMD";
+  src: url("../fonts/gill-sans-book.otf") format("opentype");
+  font-weight: 400;
 }
 
 :root {
@@ -24,20 +24,20 @@
 
   --fg-color: var(--colors__omd-orange);
   --bg-color: var(--colors__omd-blue);
-  --link-color: var(--colors__omd-orange);
 
   --start-angle: 45deg;
-  --end-angle: -45deg;
+  --end-angle: -10deg;
 
-  --hover-on-duration: 0.15s;
-  --hover-off-duration: 0.6s;
+  --transition-duration__short: 0.12s;
+  --transition-duration__long: 0.6s;
 
-  --link-hover-filter:
-    brightness(1.5)
-    saturate(0.5)
-    drop-shadow(0 0 0.3em rgba(255, 255, 255, 0.5));
+  --link-color: var(--colors__omd-orange);
+  --link-hover-filter: brightness(1.5) saturate(0.5)
+    drop-shadow(0 0 0.3em rgba(255, 255, 255, 0.8));
+  --link-filter: brightness(1) saturate(1)
+    drop-shadow(0 0 0.3em rgba(0, 0, 0, 0.2));
 
-  --gravity-bezier: cubic-bezier(0.33, 0, 0.67, 0);
+  --ease-in-cubic: cubic-bezier(0.32, 0, 0.67, 0);
 }
 
 html {
@@ -45,64 +45,154 @@ html {
   display: flex;
   color: var(--fg-color);
   background: var(--bg-color);
-  font-family: 'Gill Sans', sans-serif;
+  font-family: "Gill Sans OMD", sans-serif;
 }
 
 body {
   margin: auto;
-  width: fit-content;
+  width: min-content;
+  font-size: 1.0625rem;
+  line-height: 1.5;
   animation: fade-in 0.3s both 0.2s;
 }
 @keyframes fade-in {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-button {
-  cursor: pointer;
+h3 {
+  font-size: 1.25rem;
 }
 
-#headings {
-  padding: 0 0.25rem;
+p,
+ul,
+ol {
+  margin: 0.75rem 0;
+}
+
+ul,
+ol {
+  padding-left: 2rem;
+}
+li {
+  margin: 0.25rem 0;
+  position: relative;
+  /* line-height: 1.3; */
+}
+li::before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  content: "\f004";
+  font-size: 0.5rem;
+  font-weight: bold;
+  position: absolute;
+  left: -1rem;
+  top: 0.25rem;
+}
+
+a {
+  color: var(--link-color);
+  filter: var(--link-filter);
+}
+a:hover,
+a:focus-visible {
+  filter: var(--link-hover-filter);
+}
+*:focus-visible {
+  outline-color: var(--link-color);
+}
+
+code {
+  font-size: 0.875rem;
+}
+
+table {
+  width: fit-content;
+  border: 1px solid var(--fg-color);
+  border-radius: 0.5rem;
+}
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 0.5rem;
+}
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 0.5rem;
+}
+table tr:first-child th:first-child {
+  border-top-left-radius: 0.5rem;
+}
+table tr:first-child th:last-child {
+  border-top-right-radius: 0.5rem;
+}
+th {
+  background-color: var(--background-muted);
+}
+td {
+  background: var(--background-primary);
+}
+td,
+th {
+  text-align: left;
+  padding: 0.5rem;
+}
+thead {
+  border-collapse: collapse;
+}
+tfoot {
+  border-top: 1px solid black;
+}
+
+.main-title,
+.page-title {
+  font-size: 2.8rem;
+}
+
+header {
+  width: min-content;
+  padding: 0 0.3rem;
   display: flex;
-  align-items: flex-start;
   gap: 1em;
 }
 
-#title {
-  font-size: 2.5rem;
+.main-title {
   font-weight: 700;
   text-transform: uppercase;
 }
 
-#subtitle {
-  font-size: 2.5rem;
+.page-title {
   font-style: italic;
-  font-weight: 350;
+  font-weight: 300;
   text-transform: lowercase;
-  letter-spacing: 0.01em;
+}
+/* Keep the layout fixed when the subtitle changes by removing the non-default subtitles
+from the page flow while keeping the default one */
+.page-title :not(.default) {
+  position: absolute;
+}
+/* .page-title * {
+  transition: opacity var(--transition-duration__short);
+} */
+.page-title .hidden {
+  opacity: 0;
+  /* transition-duration: var(--transition-duration__short); */
+}
+
+main.hidden {
+  opacity: 0;
 }
 
 footer {
   position: fixed;
   bottom: 1rem;
-  font-size: 1rem;
-  font-style: italic;
-  font-weight: 350;
+  font-size: 0.9375rem;
   text-transform: lowercase;
-  letter-spacing: 0.1em;
 }
 
-footer a {
-  color: var(--link-color);
-}
-footer a:hover {
-  filter: var(--link-hover-filter)
-}
-
-
-/* Padding trick that maintains square aspect ratio */
-#grid-container {
+/* Padding trick maintains square aspect ratio */
+.grid-container {
   margin: 0.5rem 0 2rem;
   display: flex;
   flex-direction: column;
@@ -131,109 +221,89 @@ footer a:hover {
   position: relative;
 }
 
+.cell:empty::before {
+  content: "";
+  position: absolute;
+  top: -5%;
+  bottom: -5%;
+  width: 33%;
+  border-radius: 999px;
+  background: var(--fg-color);
+  transform: rotate(var(--start-angle));
+}
+
 .cell a {
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none; 
+  text-decoration: none;
+  transition: filter var(--transition-duration__long) var(--ease-in-cubic);
 }
-
+.cell a:hover,
+.cell a:focus-visible {
+  filter: var(--link-hover-filter);
+  transition: filter var(--transition-duration__short);
+}
 .cell a::before {
   transform: rotate(var(--start-angle));
-  transition:
-    transform var(--hover-off-duration) var(--gravity-bezier),
-    filter var(--hover-off-duration) var(--gravity-bezier);
+  transition: transform var(--transition-duration__long) var(--ease-in-cubic);
 }
-.cell:hover a::before {
-  transform: rotate(0);
-  filter: var(--link-hover-filter);
-  transition:
-    transform var(--hover-on-duration),
-    filter var(--hover-on-duration);
-}
-
-.cell:empty::before {
-  content: '';
-  position: absolute;
-  top: -5%;
-  bottom: -5%;
-  width: 35%;
-  border-radius: 999px;
-  background: var(--fg-color);
-
-  transform: rotate(var(--start-angle));
-  transition:
-    transform var(--hover-off-duration) var(--gravity-bezier),
-    filter var(--hover-off-duration) var(--gravity-bezier);
-}
-
-.cell:empty:hover::before {
+.cell a:hover::before,
+.cell a:focus-visible::before {
   transform: rotate(var(--end-angle));
-  transition:
-    transform var(--hover-on-duration),
-    filter var(--hover-on-duration);
+  transition: transform var(--transition-duration__short);
 }
 
-.fab {
-  color: var(--link-color);
+.icon {
+  font-size: 3.4rem;
 }
-.fab.fa-github { font-size: 3.2rem; }
-.fab.fa-linkedin { font-size: 2.8rem; }
-.fab.fa-instagram { font-size: 3.2rem; }
-
-@media (min-width: 992px) {
-  html {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 992px), (max-height: 992px) {
-  html {
-    font-size: 15px;
-  }
+.fa-link::before {
+  rotate: -45deg;
 }
 
 @media (max-width: 768px), (max-height: 768px) {
-  html {
-    font-size: 12px;
+  .main-title,
+  .page-title {
+    font-size: 1.875rem;
+  }
+  header {
+    gap: 0.67rem;
+  }
+  .icon {
+    font-size: 2.8rem;
   }
 
-  .row:nth-of-type(3),
-  .row:nth-of-type(7),
-  .cell:nth-of-type(2),
-  .cell:nth-of-type(8) {
+  /* Rows */
+  .row:nth-child(3),
+  .row:nth-child(4),
+  /* Columns */
+  .row > :nth-child(3),
+  .row > :nth-child(6) {
     display: none;
   }
-
-  .fab.fa-github { font-size: 4rem; }
-  .fab.fa-linkedin { font-size: 3.5rem; }
-  .fab.fa-instagram { font-size: 4rem; }
 }
 
-@media (max-width: 576px), (max-height: 576px) {
-  #headings {
+@media (max-width: 500px), (max-height: 500px) {
+  header {
     flex-direction: column;
     gap: 0;
   }
-
-  #my-role {
-    letter-spacing: 0.66rem;
+  .main-title,
+  .page-title {
+    font-size: min(8.75vw, 7.5vh);
+  }
+  .icon {
+    font-size: 8.75rem;
   }
 
-  html {
-    font-size: min(3.5vw, 3vh);
-  }
-
-  .row:nth-of-type(5),
-  .row:nth-of-type(6),
-  .cell:nth-of-type(5),
-  .cell:nth-of-type(6) {
+  /* Rows */
+  .row:nth-child(1),
+  .row:nth-child(5),
+  /* Columns */
+  .row > :nth-child(4),
+  .row > :nth-child(7) {
     display: none;
   }
-
-  .fab.fa-github { font-size: 3.6rem; }
-  .fab.fa-linkedin { font-size: 3.1rem; }
-  .fab.fa-instagram { font-size: 3.6rem; }
 }

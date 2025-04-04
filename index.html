@@ -1,33 +1,85 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Peter Meehan" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Peter Meehan">
 
     <title>Peter Meehan</title>
 
-    <link rel="icon" href="favicon.ico" type="image/png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.1/css/all.css" />
-    <link rel="stylesheet" href="theme/reset.css" />
-    <link rel="stylesheet" href=theme/styles.css />
-    <script src="theme/grid.js" defer></script>
+    <link rel="icon" href="favicon.ico" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.css">
+    <link rel="stylesheet" href="theme/reset.css">
+    <link rel="stylesheet" href=theme/styles.css>
   </head>
 
   <body>
-    <div id="headings">
-      <h1 id="title">Peter Meehan</h1>
-      <h2 id="subtitle">Front end dev</h2>
-    </div>
+    <header>
+      <h1 class="main-title">Peter&nbsp;Meehan</h1>
+      <h2 class="page-title">
+        <span class="about hidden" aria-hidden="true">About me</span>
+        <span class="projects hidden" aria-hidden="true">Projects</span>
+        <span class="employment hidden" aria-hidden="true">Employment</span>
+        <span class="socials hidden" aria-hidden="true">Socials</span>
+        <span class="default">Front&nbsp;end&nbsp;dev</span>
+      </h2>
+    </header>
 
-    <ul id="links">
-      <li><a href="https://github.com/apmeehan" class="fab fa-github">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/apetermeehan/" class="fab fa-linkedin">LinkedIn</a></li>
-      <li><a href="https://www.instagram.com/apmeehan/" class="fab fa-instagram">Instagram</a></li>
-    </ul>
+    <nav>
+      <ul class="links">
+        <li><a href="https://github.com/apmeehan" class="icon fas fa-portrait">About me</a></li>
+        <li><a href="https://github.com/apmeehan" class="icon fas fa-file-code">Projects</a></li>
+        <!-- <li><a href="https://www.linkedin.com/in/apetermeehan/" class="icon fas fa-building">Employment</a></li> -->
+        <li><a href="https://www.instagram.com/apmeehan/" class="icon fas fa-link">Links</a></li>
+      </ul>
+    </nav>
+
+    <main class="about">  
+      <p>Hi, I’m Peter.</p>
+      <p>I love working with designers and product owners to bring their ideas and visions to life!</p>
+
+      <h3>Some other things I love</h3>
+      <ul>
+        <li>Usable, accessible and delightful UIs</li>
+        <li>Component-driven development</li>
+        <li>Empathetic code</li>
+        <li>Working with people who know better than me</li>
+      </ul>
+
+      <table>
+        <tr>
+          <th>Languages</th>
+          <td>JavaScript/TypeScript ⏐ HTML ⏐ CSS/SCSS</td>
+        </tr>
+        <tr>
+          <th>UI libs</th>
+          <td>React ⏐ Redux ⏐ Styled Components ⏐ CSS Modules</td>
+        </tr>
+        <tr>
+          <th>Testing</th>
+          <td>Jest ⏐ React Testing Library ⏐ Cypress ⏐ Storybook ⏐ Chromatic</td>
+        </tr>
+        <tr>
+          <th>Other</th>
+          <td>Git ⏐ GitHub ⏐ Jenkins ⏐ GIMP</td>
+        </tr>
+      </table>
+    </main>
+
+    <main class="projects hidden" aria-hidden="true">
+    </main>
+
+    <main class="employment hidden" aria-hidden="true">
+    </main>
+
+    <main class="socials hidden" aria-hidden="true">
+    </main>
+
 
     <footer>
-      <p><a href="https://en.wikipedia.org/wiki/Orchestral_Manoeuvres_in_the_Dark_(album)">Design inspiration</a></p>
+      <a href="https://en.wikipedia.org/wiki/Orchestral_Manoeuvres_in_the_Dark_(album)">Design inspiration</a>
     </footer>
+
+    <script src="theme/create-grid.js"></script>
   </body>
 </html>
